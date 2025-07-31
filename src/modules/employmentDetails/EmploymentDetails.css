@@ -1,0 +1,12 @@
+.mainSection {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 20px;
+}
+
+.subSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

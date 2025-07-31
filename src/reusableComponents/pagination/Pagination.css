@@ -1,0 +1,33 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.page,
+.arrow {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.page.active {
+  background-color: #1D4C43;
+  color: white;
+  border-color: #007bff;
+}
+
+.page:hover:not(.active),
+.arrow:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+.arrow:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

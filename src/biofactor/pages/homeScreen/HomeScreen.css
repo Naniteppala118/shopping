@@ -1,0 +1,104 @@
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    /* ✅ prevent scroll */
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* ✅ total viewport height */
+    overflow: hidden;
+}
+
+.appbar {
+    height: 60px;
+    background-color: #1d4c43;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    flex-shrink: 0;
+
+}
+
+.menu-button {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    /* ✅ no scroll */
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #cecece;
+    color: white;
+    padding: 20px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    margin-bottom: 12px;
+    cursor: pointer;
+    color: black;
+}
+
+.page-content {
+    flex: 1;
+    padding: 20px;
+    overflow: hidden;
+    /* ✅ prevent scroll inside page */
+    box-sizing: border-box;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.2s;
+
+}
+
+.sidebar-item:hover {
+    background-color: #ffffff;
+}
+
+.sidebar-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}

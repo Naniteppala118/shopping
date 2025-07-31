@@ -1,0 +1,27 @@
+.radio-group {
+  display: flex;
+  height: 71px;
+  flex-direction: column;
+}
+
+.radio-label {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.required-asterisk {
+  color: red;
+  margin-left: 4px;
+}
+
+.radio-options {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}

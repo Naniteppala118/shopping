@@ -1,0 +1,37 @@
+.addressSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 6px;
+ 
+
+}
+.mainSection {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 20px;
+}
+
+.subSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.addressHeadline{
+  margin-bottom: 32px;
+}
+
+.sameAddressCheckbox {
+  display: flex;
+  align-items: center;
+  margin: 4px;
+  gap: 10px; /* spacing between checkbox and label */
+}
+
+.sameAddressCheckbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+

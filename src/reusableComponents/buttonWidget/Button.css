@@ -1,0 +1,17 @@
+.buttonWidget {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1D4C43;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 8px;
+  /* spacing between icon and text */
+  transition: background-color 0.3s ease;
+
+}

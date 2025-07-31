@@ -1,0 +1,80 @@
+.familyDetailsSection {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.label {
+    margin-right: 6px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.maritalSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.maritalCheckbox {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 4px;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #E8EDEC;
+}
+
+.checkbox {
+    color: #1D4C43;
+}
+
+
+.maritalCheckbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+.childPhotoSection{
+    display: flex;
+    gap: 44px;
+    margin-top: 14px;
+}
+
+
+
+
+.unMarriedPhotoSection {
+    display: flex;
+
+    gap: 10px;
+
+}
+
+.childSection {
+    display: flex;
+    margin-top: 10px;
+    gap: 44px;
+
+}
+
+.addChildButton {
+    display: flex;
+    justify-content: flex-end;
+    /* Aligns to right */
+    margin-top: auto;
+    /* Pushes it to bottom if in column flex */
+    width: 330px;
+}

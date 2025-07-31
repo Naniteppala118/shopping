@@ -1,0 +1,26 @@
+.dropdown-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0%;
+}
+
+.dropdown-label {
+    font-weight: 500;
+    padding-right: 10px;
+    margin-bottom: 6px;
+
+}
+
+.required-asterisk {
+    color: red;
+    margin-left: 4px;
+}
+
+.dropdown-select {
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    margin: 0;
+}

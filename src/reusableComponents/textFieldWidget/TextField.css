@@ -1,0 +1,55 @@
+.textFieldContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  height: 54px;
+
+}
+
+.textFieldLabel {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.textFieldWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.textFieldInput {
+  flex: 1;
+  padding: 10px;
+  /* Room for icon */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.textFieldInput:focus {
+  border-color: #007bff;
+}
+
+.textFieldIcon {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.error-border input {
+  border: 1px solid red;
+}
+.textFieldWrapper.error .textFieldInput {
+  border: 1px solid red;
+}

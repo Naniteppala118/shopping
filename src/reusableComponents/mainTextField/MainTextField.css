@@ -1,0 +1,41 @@
+.text-field-container {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
+.text-field-label {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.text-field-input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.text-field-icon {
+  position: absolute;
+  left: 12px;
+  color: gray;
+}
+
+.text-field-input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+}
+
+
+
+
+.required-asterisk {
+  color: red;
+  margin-left: 2px;
+}
+

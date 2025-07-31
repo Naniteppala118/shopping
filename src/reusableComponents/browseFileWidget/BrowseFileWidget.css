@@ -1,0 +1,76 @@
+.browse-file-container {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    margin-bottom: 4px;
+    height: 120px;
+
+
+}
+
+
+.required-asterisk {
+  color: red;
+  margin-left: 2px;
+}
+
+
+.browse-label {
+    font-size: 14px;
+    margin-bottom:6px ;
+    font-weight: 500;
+}
+
+.browse-card {
+    border: 2px dotted #aaa;
+    padding: 8px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.browse-img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+
+}
+
+.browse-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.browse-button {
+    background-color: #ffffff;
+    color: #54575C;
+    padding: 4px 8px;
+    border: 2px solid #CBD0DC;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    user-select: none;
+}
+
+.browse-button:hover {
+    background-color: #ffffff;
+}
+
+.firstLine {
+    font-size: 12px;
+    font-weight: 500;
+
+}
+
+.secondLine {
+    font-size: 10px;
+    color: #aaa;
+    font-weight: 400;
+}

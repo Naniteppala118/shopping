@@ -1,0 +1,12 @@
+
+.sidebar-subitem {
+  padding: 8px;
+  font-size: 14px;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sidebar-subitem:hover {
+  background-color: #e0e0e0;
+}
