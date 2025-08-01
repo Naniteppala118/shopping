@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 
 import AppBarComponent from "../../components/AppBarComponent";
-import SideBarComponent from "../../components/SideBarComponent";
+import SideBarComponent from "../../components/sideBarComponent/SideBarComponent";
 import DashboardScreen from "../dashBoardScreen/Dashboard";
 import MasterScreen from "../masterScreen/MasterScreen";
 import LoginScreen from "../loginScreen/LoginScreen";
@@ -15,7 +15,7 @@ export default function HomeScreen() {
     const handlePageChange = (page) => {
         if (page === "Dashboard") {
             navigate("/home/dashboard");
-        } else if (page === "Master") {
+        } else if (page === "Employee") {
             navigate("/home/master");
         } else {
             navigate("/home");

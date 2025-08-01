@@ -4,19 +4,34 @@ import AddButtonWidget from '../../../reusableComponents/addButtonWidget/AddButt
 import { FiPlus, FiFolderPlus } from 'react-icons/fi';
 import AddEmployeeModal from '../../../modules/addEmployeeModal/AddEmployeeModal';
 import Pagination from '../../../reusableComponents/pagination/Pagination';
+import ToggleButton from '../../../reusableComponents/toggleButton/ToggleButton'
 const MasterScreen = () => {
   const [users, setUsers] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [toggleStates, setToggleStates] = useState({});
 
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 9;
+  const handleToggle = (userId) => {
+    setToggleStates(prev => ({
+      ...prev,
+      [userId]: !prev[userId]
+    }));
+  };
+
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const res = await fetch('https://dummyjson.com/users');
         const data = await res.json();
-        console.log("data",data);
+        console.log("data", data);
         setUsers(data.users);
+
+        const initialToggles = {};
+        data.users.forEach(user => {
+          initialToggles[user.id] = false;
+        });
+        setToggleStates(initialToggles);
       } catch (error) {
         console.error("Failed to fetch users:", error);
       }
@@ -68,6 +83,7 @@ const MasterScreen = () => {
             <th>Name</th>
             <th>Email</th>
             <th>Company Name</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -78,6 +94,12 @@ const MasterScreen = () => {
                 <td>{user.firstName} {user.lastName}</td>
                 <td>{user.email}</td>
                 <td>{user.company?.name}</td>
+                <td>
+                  <ToggleButton
+                    isToggled={toggleStates[user.id] || false}
+                    onToggle={() => handleToggle(user.id)}
+                  />
+                </td>
               </tr>
             ))
           ) : (
@@ -89,14 +111,14 @@ const MasterScreen = () => {
       </table>
       <div className="pagination-container">
         <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
 
       </div>
 
-      
+
 
 
       {/*<div className="pagination-container">
