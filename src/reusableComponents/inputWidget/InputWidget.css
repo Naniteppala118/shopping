@@ -1,0 +1,24 @@
+.input-widget {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.input-label {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.input-textarea {
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.required-asterisk {
+  color: red;
+  margin-left: 2px;
+}

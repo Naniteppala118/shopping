@@ -8,6 +8,7 @@ import MasterScreen from "../masterScreen/MasterScreen";
 import LoginScreen from "../loginScreen/LoginScreen";
 import "./HomeScreen.css";
 import SignupScreen from "../signupScreen/SignupScreen";
+import ZoneMasterScreen from "../zoneMasterScreen/ZoneMasterScreen";
 
 export default function HomeScreen() {
     const navigate = useNavigate();
@@ -17,6 +18,8 @@ export default function HomeScreen() {
             navigate("/home/dashboard");
         } else if (page === "Employee") {
             navigate("/home/master");
+        } else if (page === "Zone") {
+            navigate("/home/zone");
         } else {
             navigate("/home");
         }
@@ -39,6 +42,7 @@ export default function HomeScreen() {
                         <Route path="dashboard" element={<DashboardScreen />} />
                         <Route path="master" element={<MasterScreen />} />
                         <Route path="signup" element={<SignupScreen />} />
+                        <Route path="zone" element={<ZoneMasterScreen />} />
                     </Routes>
                     
                 </div>

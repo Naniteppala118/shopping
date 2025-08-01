@@ -12,7 +12,8 @@ const MainTextField = ({
   disabled = false,
   icon,
   style = {},
-  labelFontSize = '16px'
+  labelFontSize = '16px',
+ 
   
 }) => {
   return (
@@ -30,6 +31,7 @@ const MainTextField = ({
           disabled={disabled}
           className="text-field-input"
           style={style}
+         
         />
       </div>
     </div>

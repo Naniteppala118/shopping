@@ -16,7 +16,7 @@ export default function SideBarComponent({ onSelect }) {
 
   const subMasters = [
     { key: "Employee", label: "Employee Master" },
-    { key: "Employee", label: "Zones Master" },
+    { key: "Zone", label: "Zones Master" },
     { key: "Employee", label: "States Master" },
     { key: "Employee", label: "Education Master" },
   ];
