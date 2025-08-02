@@ -1,9 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
-
+import '../sideBarComponent/SideBarComponent.css'
+import AddButtonWidget from "../../../reusableComponents/addButtonWidget/AddButtonWidget";
 export default function SideBarComponent({ onSelect }) {
   const [isMasterOpen, setIsMasterOpen] = useState(false);
+  const [isNetworkOpen, setIsNetworkOpen] = useState(false);
   const masterRef = useRef(null);
+  const networkRef = useRef(null);
   const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 });
 
   const toggleMaster = () => {
@@ -12,6 +15,14 @@ export default function SideBarComponent({ onSelect }) {
       setDropdownPosition({ top: rect.bottom, left: rect.left + rect.width });
     }
     setIsMasterOpen(!isMasterOpen);
+  };
+
+  const toggleNetwork = () => {
+    if (networkRef.current) {
+      const rect = networkRef.current.getBoundingClientRect();
+      setDropdownPosition({ top: rect.bottom, left: rect.left + rect.width });
+    }
+    setIsNetworkOpen(!isNetworkOpen);
   };
 
   const subMasters = [
@@ -38,17 +49,60 @@ export default function SideBarComponent({ onSelect }) {
       <div className="sidebar">
         <ul className="sidebar-list">
           <li className="sidebar-item" onClick={() => onSelect("Dashboard")}>
-            <img src="assets/dashboard.svg" alt="Dashboard" className="sidebar-icon" color="#000000" />
-            <span className="title">Dashboard</span>
+            <div className="title-widget">
+              <img src="assets/dashboard.svg" alt="Dashboard" className="sidebar-icon" color="#000000" />
+              <span className="title">Dashboard</span>
+
+            </div>
+
           </li>
+          <li className="sidebar-item" onClick={() => onSelect("Dashboard")}>
+            <div className="title-widget">
+              <img src="assets/teamStatus.svg" alt="Dashboard" className="sidebar-icon" color="#000000" />
+              <span className="title">Today's Team Status</span>
+
+            </div>
+
+          </li>
+          <li className="sidebar-item" onClick={() => onSelect("Dashboard")}>
+            <div className="title-widget">
+              <img src="assets/activityReport.svg" alt="Dashboard" className="sidebar-icon" color="#000000" />
+              <span className="title">Detailed Activity Report</span>
+
+            </div>
+
+          </li>
+          <li
+            className="sidebar-item"
+            onClick={toggleNetwork}
+            ref={masterRef}
+          ><div className="title-widget">
+              <img src="assets/network.svg" alt="Master" className="sidebar-icon" />
+              <span className="title">Network</span>
+
+            </div>
+
+            <div className="dropdownIcon">
+              {isNetworkOpen ? <FiChevronDown size={20} /> : <FiChevronRight size={20} />}
+            </div>
+
+
+
+
+          </li>
+          
+
 
           <li
             className="sidebar-item"
             onClick={toggleMaster}
             ref={masterRef}
-          >
-            <img src="assets/Master.svg" alt="Master" className="sidebar-icon" />
-            <span className="title">Master</span>
+          ><div className="title-widget">
+              <img src="assets/masterIcon.svg" alt="Master" className="sidebar-icon" />
+              <span className="title">Master</span>
+
+            </div>
+
             <div className="dropdownIcon">
               {isMasterOpen ? <FiChevronDown size={20} /> : <FiChevronRight size={20} />}
             </div>
@@ -58,6 +112,8 @@ export default function SideBarComponent({ onSelect }) {
 
           </li>
         </ul>
+        <div className="logout-button">
+        </div>
       </div>
 
       {isMasterOpen && (

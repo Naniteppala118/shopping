@@ -10,3 +10,25 @@
 .sidebar-subitem:hover {
   background-color: #e0e0e0;
 }
+
+
+.sidebar-icon {
+    width: 24px;
+    color: black;
+    height: 24px;
+    object-fit: contain;
+}
+.title{
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+}
+.title-widget{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.logout-button{
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+}

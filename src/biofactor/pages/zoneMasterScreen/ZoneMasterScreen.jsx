@@ -108,6 +108,7 @@ const ZoneMasterScreen = () => {
                         <th>Email</th>
                         <th>Company Name</th>
                         <th>Status</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -123,6 +124,9 @@ const ZoneMasterScreen = () => {
                                         isToggled={toggleStates[user.id] || false}
                                         onToggle={() => handleToggle(user.id)}
                                     />
+                                </td>
+                                <td>
+                                    <img src='assets/actionsIcon.svg' alt='icon'/>
                                 </td>
                             </tr>
                         ))

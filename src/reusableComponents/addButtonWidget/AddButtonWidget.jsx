@@ -11,3 +11,21 @@ const AddButtonWidget = ({ text, icon, onClick, type = 'button', style = {}, fon
 };
 
 export default AddButtonWidget;
+
+
+{/**
+  import React from 'react';
+import './AddButtonWidget.css';
+
+const AddButtonWidget = ({ text, icon, onClick, type = 'button', style = {}, fontSize}) => {
+  return (
+    <button type={type} onClick={onClick} style={style} className={`buttonWidget`}>
+      {icon && <img src={icon} alt="icon" className="buttonIcon" />}
+      <span className="buttonText"  style={{fontSize: fontSize}}>{text}</span>
+    </button>
+  );
+};
+
+export default AddButtonWidget;
+
+ */}
