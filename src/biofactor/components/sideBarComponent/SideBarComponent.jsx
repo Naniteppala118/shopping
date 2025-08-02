@@ -38,7 +38,7 @@ export default function SideBarComponent({ onSelect }) {
       <div className="sidebar">
         <ul className="sidebar-list">
           <li className="sidebar-item" onClick={() => onSelect("Dashboard")}>
-            <img src="assets/dashboard.svg" alt="Dashboard" className="sidebar-icon" />
+            <img src="assets/dashboard.svg" alt="Dashboard" className="sidebar-icon" color="#000000" />
             <span className="title">Dashboard</span>
           </li>
 

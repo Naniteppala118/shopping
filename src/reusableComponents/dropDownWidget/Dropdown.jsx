@@ -1,7 +1,7 @@
 import React from 'react';
 import './Dropdown.css';
 
-const Dropdown = ({ label, options,placeHolder, value, onChange, name, required = false,style={} }) => {
+const Dropdown = ({ label, options,placeHolder, value, onChange, name, required = false,style={}, error = '', }) => {
   return (
     <div className="dropdown-group" style={style}>
       {label && (
@@ -11,7 +11,7 @@ const Dropdown = ({ label, options,placeHolder, value, onChange, name, required 
         </label>
       )}
       <select
-        className="dropdown-select"
+        className={`dropdown-select ${error ? 'error-border' : ''}`}
         name={name}
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -26,6 +26,7 @@ const Dropdown = ({ label, options,placeHolder, value, onChange, name, required 
           </option>
         ))}
       </select>
+      {error && <div className="error-message">{error}</div>} {/* Show error */}
     </div>
   );
 };

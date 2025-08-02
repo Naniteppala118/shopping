@@ -59,8 +59,6 @@
 
 .sections {
    display: flex;
-  justify-content: space-between; /* space between the two sections */
-  align-items: flex-start;
   flex-wrap: wrap; /* responsive if needed */
   
 }
@@ -69,4 +67,8 @@
   display: flex;
   flex-direction: column;
 
+}
+.profilePic{
+  display: flex;
+  justify-content: center;
 }

@@ -13,6 +13,7 @@ const MainTextField = ({
   icon,
   style = {},
   labelFontSize = '16px',
+  error = '',
  
   
 }) => {
@@ -29,11 +30,12 @@ const MainTextField = ({
           placeholder={placeholder}
           required={required}
           disabled={disabled}
-          className="text-field-input"
+           className={`text-field-input ${error ? 'error-border' : ''}`} 
           style={style}
          
         />
       </div>
+      {error && <div className="error-message">{error}</div>} {/* Error message */}
     </div>
   );
 };

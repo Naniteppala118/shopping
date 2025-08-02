@@ -24,3 +24,13 @@
     outline: none;
     margin: 0;
 }
+
+.error-border {
+  border: 1px solid red !important;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
