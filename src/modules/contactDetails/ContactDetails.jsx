@@ -32,7 +32,7 @@ const ContactDetails = () => {
         pinCode: '',
         flatNo: '',
         locality: '',
-        landmark: '',
+        district: '',
         country: '',
         state: ''
     });
@@ -41,10 +41,35 @@ const ContactDetails = () => {
         pinCode: '',
         flatNo: '',
         locality: '',
-        landmark: '',
+        district: '',
         country: '',
         state: ''
     });
+
+    const fetchAddressFromPincode = async (pincode) => {
+        try {
+            const response = await fetch(`https://api.postalpincode.in/pincode/${pincode}`);
+            const data = await response.json();
+
+            if (data[0].Status === "Success" && data[0].PostOffice && data[0].PostOffice.length > 0) {
+                const info = data[0].PostOffice[0];
+                return {
+                    state: info.State,
+                    district: info.District,
+                    country: info.Country,
+                };
+            }
+        } catch (error) {
+            console.error("Failed to fetch address details", error);
+        }
+        return {
+            state: '',
+            district: '',
+            country: ''
+        };
+    };
+
+
 
 
     return (
@@ -58,8 +83,21 @@ const ContactDetails = () => {
                     </h4>
                     <div className='addressSection'>
                         <MainTextField label='Pin Code' placeholder='Enter Pin Code' required style={{ width: '260px', fontSize: '14px', }} labelFontSize='14px' value={permanentAddress.pinCode}
-                            onChange={(e) =>
-                                setPermanentAddress({ ...permanentAddress, pinCode: e.target.value })
+                            onChange={async (e) => {
+                                const pin = e.target.value;
+                                setPermanentAddress({ ...permanentAddress, pinCode: pin });
+
+                                if (pin.length === 6) {
+                                    const { state, district, country } = await fetchAddressFromPincode(pin);
+                                    setPermanentAddress(prev => ({
+                                        ...prev,
+                                        state: state,
+                                        district: district,
+                                        country: country
+                                    }));
+                                }
+                            }
+
                             } />
                         <MainTextField label='Flat No / House No' placeholder='Enter flat no / house no' required style={{ width: '260px', fontSize: '14px', }} labelFontSize='14px' value={permanentAddress.flatNo}
                             onChange={(e) =>
@@ -72,9 +110,9 @@ const ContactDetails = () => {
                             onChange={(e) =>
                                 setPermanentAddress({ ...permanentAddress, locality: e.target.value })
                             } />
-                        <MainTextField label='Landmark' placeholder='Enter landmark' required style={{ width: '260px', fontSize: '14px', }} labelFontSize='14px' value={permanentAddress.landmark}
+                        <MainTextField label='District' placeholder='Enter landmark' required style={{ width: '260px', fontSize: '14px', }} labelFontSize='14px' value={permanentAddress.district}
                             onChange={(e) =>
-                                setPermanentAddress({ ...permanentAddress, landmark: e.target.value })
+                                setPermanentAddress({ ...permanentAddress, district: e.target.value })
                             } />
 
                     </div>
@@ -115,9 +153,20 @@ const ContactDetails = () => {
                     </div>
                     <div className='addressSection'>
                         <MainTextField label='Pin Code' placeholder='Enter Pin Code' required style={{ width: '260px', fontSize: '14px', }} labelFontSize='14px' value={currentAddress.pinCode}
-                            onChange={(e) =>
-                                setCurrentAddress({ ...currentAddress, pinCode: e.target.value })
-                            } />
+                             onChange={async (e) => {
+                                const pin = e.target.value;
+                                setCurrentAddress({ ...currentAddress, pinCode: pin });
+
+                                if (pin.length === 6) {
+                                    const { state, district, country } = await fetchAddressFromPincode(pin);
+                                    setCurrentAddress(prev => ({
+                                        ...prev,
+                                        state: state,
+                                        district: district,
+                                        country: country
+                                    }));
+                                }
+                            }} />
                         <MainTextField label='Flat No / House No' placeholder='Enter flat no / house no' required style={{ width: '260px', fontSize: '14px', }} labelFontSize='14px' value={currentAddress.flatNo}
                             onChange={(e) =>
                                 setCurrentAddress({ ...currentAddress, flatNo: e.target.value })
@@ -129,9 +178,9 @@ const ContactDetails = () => {
                             onChange={(e) =>
                                 setCurrentAddress({ ...currentAddress, locality: e.target.value })
                             } />
-                        <MainTextField label='Landmark' placeholder='Enter landmark' required style={{ width: '260px', fontSize: '14px', }} labelFontSize='14px' value={currentAddress.landmark}
+                        <MainTextField label='District' placeholder='Enter landmark' required style={{ width: '260px', fontSize: '14px', }} labelFontSize='14px' value={currentAddress.district}
                             onChange={(e) =>
-                                setCurrentAddress({ ...currentAddress, landmark: e.target.value })
+                                setCurrentAddress({ ...currentAddress, district: e.target.value })
                             } />
 
                     </div>
